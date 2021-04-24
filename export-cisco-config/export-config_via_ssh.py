@@ -20,9 +20,8 @@ try:
     file = open(dir, "w")
     file.write(run_conf)
     print(run_conf)
-    print(f"File already saved in {dir}")
+    print(f"Succesfully Export Configuration, File already saved in {dir}")
 
 except Exception as Err:
     print(Err)
-# print(conn.send_config_set(cmd))
-print("Selamat anda sudah berhasil membuat Loopback")
+
