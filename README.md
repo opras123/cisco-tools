@@ -10,3 +10,4 @@ pip install (library name)
 1. create file requirement.txt
 2. list all library need to install
 3. command : "pip install -r <path-location>/requirements.txt"
+4. ref = "https://note.nkmk.me/en/python-pip-install-requirements/"
