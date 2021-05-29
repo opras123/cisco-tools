@@ -1,6 +1,6 @@
 # net-tools
 
-- How to install Python on windows 10
+- How to install Python3 on windows 10
 https://www.youtube.com/watch?v=V_ACbv4329E
 
 - How to install specific library 
