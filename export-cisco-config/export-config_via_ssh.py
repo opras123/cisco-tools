@@ -2,7 +2,8 @@ from netmiko import ConnectHandler
 import os
 import re
 
-listip = ["172.20.1.246","172.20.1.245"]
+listip = ["172.23.0.242"]
+# sample multiple ip ["172.12.1.1","172.10.12.1"]
 
 for ip in listip:
     print(ip)
@@ -10,7 +11,7 @@ for ip in listip:
         'device_type':'cisco_ios',
         'ip':ip,
         'username':'automation',
-        'password':'test',
+        'password':'automation',
         'secret':'cisco'
         }
 
@@ -20,16 +21,13 @@ for ip in listip:
         print("Succesfully Connect")
         run_conf = conn.send_command('show running-config')
         # you can define path for saving file manually, or automatic select path
-    
-        #path = os.path.join(os.getcwd(), 'export.txt')
         hostname = re.search("hostname(.*)\s",run_conf).group(0).split(" ")
         namefile = ("exp_cfg-{}.txt".format(hostname[1].replace("\n","")))
-        print (namefile)
-        path = os.path.join("C:\Python\Python37\myscipt", namefile)
+        #path = os.path.join(os.getcwd(), namefile)
+        path = os.path.join(".\data", namefile)
         file = open(path, "w")
         file.write(run_conf)
-        print(f"Succesfully Export Configuration, File already saved in {dir}")
-
+        print(f"Succesfully Export Configuration, File already saved in {path}")
     except Exception as Err:
         print(Err)
 
