@@ -24,7 +24,7 @@ for ip in listip:
         hostname = re.search("hostname(.*)\s",run_conf).group(0).split(" ")
         namefile = ("exp_cfg-{}.txt".format(hostname[1].replace("\n","")))
         #path = os.path.join(os.getcwd(), namefile)
-        path = os.path.join(".\data", namefile)
+        path = os.path.join("./data", namefile)
         file = open(path, "w")
         file.write(run_conf)
         print(f"Succesfully Export Configuration, File already saved in {path}")
